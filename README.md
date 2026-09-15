@@ -11,7 +11,7 @@ modularizada em Maven, com persistência relacional em SQLite via JDBC puro.
 
 | RM | Nome completo |
 |----|---------------|
-| 561592 | Vitor [SOBRENOME] |
+| 561592 | Vitor Bordalo |
 
 ## Arquitetura
 
