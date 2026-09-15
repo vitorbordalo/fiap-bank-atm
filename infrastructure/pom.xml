@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.fiap.bank</groupId>
+        <artifactId>fiap-bank-atm</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>fiap-bank-atm-infrastructure</artifactId>
+    <packaging>jar</packaging>
+    <name>fiap-bank-atm-infrastructure</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fiap.bank</groupId>
+            <artifactId>fiap-bank-atm-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fiap.bank</groupId>
+            <artifactId>fiap-bank-atm-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fiap.bank</groupId>
+            <artifactId>fiap-bank-atm-presentation</artifactId>
+        </dependency>
+
+        <!-- Driver SQLite JDBC (Anexo 7.1) -->
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+        </dependency>
+
+        <!--
+            Dependencia de runtime do proprio driver sqlite-jdbc (org.sqlite.JDBC usa
+            org.slf4j.LoggerFactory em seu bloco estatico). Declarada explicitamente
+            para garantir o carregamento do driver mesmo em builds offline.
+        -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
